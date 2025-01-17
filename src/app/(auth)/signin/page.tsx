@@ -1,16 +1,15 @@
 'use client'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
-    CardTitle,
+    CardTitle
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import Link from 'next/link'
 
 const Signin = () => {
     return (
@@ -32,19 +31,17 @@ const Signin = () => {
                     <p className="flex items-center gap-x-3 text-sm text-muted-foreground before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
                         or
                     </p>
+                    <form >
 
-                    <div className="space-y-2">
-                        <Label>Email address</Label>
-                        <Input type="email" required />
-                    </div>
 
-                    <div className="space-y-2">
-                        <Label>Password</Label>
-                        <Input type="password" required />
-                    </div>
-                </CardContent>
+                        <div className="space-y-2">
+                            <Label>Email address</Label>
+                            <Input type="email" required />
+                        </div>
 
-                <CardFooter>
+
+                    </form>
+
                     <div className="grid w-full gap-y-4">
                         <Button>Sign in</Button>
                         <Button variant="link" size="sm" asChild>
@@ -53,7 +50,10 @@ const Signin = () => {
                             </Link>
                         </Button>
                     </div>
-                </CardFooter>
+
+                </CardContent>
+
+
             </Card>
         </div>
     )

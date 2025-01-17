@@ -107,9 +107,16 @@ model OrganizationInvite {
     organizationId String   @db.ObjectId
     email          String
     role           Role
+    status         InviteStatus
     expiresAt      DateTime
     createdAt      DateTime @default(now())
     updatedAt      DateTime @updatedAt
+}
+
+enum InviteStatus {
+    PENDING
+    ACCEPTED
+    EXPIRED
 }
 
 model OrganizationInviteToken {
@@ -121,10 +128,5 @@ model OrganizationInviteToken {
     updatedAt DateTime @updatedAt
 }
 
-model OrganizationInviteAcceptance {
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
-    inviteId  String   @db.ObjectId
-    userId    String   @db.ObjectId
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-}
+
+
