@@ -5,7 +5,7 @@ export const singin_controller = async (req: NextRequest) => {
     const { email } = await req.json();
 
     if (!email) {
-        return NextResponse.json(
+        return NextResponse.json(    
             { message: "Email is required" },
             { status: 400 }
         );
